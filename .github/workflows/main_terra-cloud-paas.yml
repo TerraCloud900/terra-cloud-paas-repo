@@ -99,4 +99,4 @@ jobs:
           app-name: 'terra-cloud-paas'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_027163352B194E51ACCDFC5BEE270FBF }}
