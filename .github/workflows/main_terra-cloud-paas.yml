@@ -59,6 +59,9 @@ jobs:
       - name: Move public files to root
         run: cp -r public/* ./
 
+      - name: Ensure .env file is deployed
+        run: cp .env.example .env
+
       - name: Copy public files to root
         run: cp public/* ./
 
