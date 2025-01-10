@@ -19,6 +19,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Check Secret Value
+        run: echo "The secret $TEST_SECRET is set"
+        env:
+          TEST_SECRET: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_027163352B194E51ACCDFC5BEE270FBF }}
+
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
