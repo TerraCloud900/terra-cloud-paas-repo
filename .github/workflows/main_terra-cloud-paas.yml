@@ -64,9 +64,6 @@ jobs:
       - name: Ensure .env file is deployed
         run: cp .env.example .env
 
-      - name: Copy public files to root
-        run: cp public/* ./
-
       - name: Zip artifact for deployment
         run: zip -r release.zip ./* .env
 
