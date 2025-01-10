@@ -59,7 +59,7 @@ jobs:
         run: chmod -R 775 storage
 
       - name: Move public files to root
-        run: cp -r public/* ./
+        run: rsync -a public/* ./
 
       - name: Ensure .env file is deployed
         run: cp .env.example .env
