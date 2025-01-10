@@ -47,11 +47,13 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress --optimize-autoloader
 
-      - name: Set up Laravel caches
+      - name: Set up Laravel caches and generate key
         run: |
           php artisan config:cache
           php artisan route:cache
           php artisan view:cache
+          php artisan storage:link
+          php artisan key:generate
 
       - name: Set correct permissions
         run: chmod -R 775 storage
